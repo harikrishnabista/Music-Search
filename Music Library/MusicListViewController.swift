@@ -30,7 +30,6 @@ class MusicListViewController: UIViewController, UITableViewDelegate, UITableVie
         let configuration = URLSessionConfiguration.default;
         self.urlSession = URLSession(configuration: configuration);
         
-
         self.activityIndicator.stopAnimating();
         self.activityIndicator.isHidden = true;
         
@@ -46,7 +45,6 @@ class MusicListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func searchAndDisplay() {
         if let searchText = self.searchBar.text {
-            
             self.activityIndicator.isHidden = false;
             self.activityIndicator.startAnimating();
             

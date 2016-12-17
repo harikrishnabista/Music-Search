@@ -9,15 +9,13 @@
 import UIKit
 
 class MusicItemsHandler {
-    
     var musicList:[MusicItem]?;
-    
     let ITUNES_BASE_URL = "https://itunes.apple.com/search?term=";
-    
     init() {
         self.musicList = [];
     }
     
+    // calling api using differnet thread not to freeze the UI and tp improve performance
     func SearchMusic(searchText:String,completion: @escaping (_ finished:Bool) -> Void) {
         let url = self.ITUNES_BASE_URL + UtilitiesFunctions.removeWhiteSpaceByPlus(input: searchText);
         let request = URLRequest(url: URL(string: url)!);

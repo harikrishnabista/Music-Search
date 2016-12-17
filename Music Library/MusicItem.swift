@@ -33,15 +33,14 @@ class MusicItem {
     func getLyrics(completion: @escaping (_ finished:Bool,(url:String?, lyrics:String?)) -> Void) {
         
         if let url = self.getFormattedUrlFor(){
-            
             let request = URLRequest(url: url);
-            
             let configuration = URLSessionConfiguration.default;
             let urlSession = URLSession(configuration: configuration);
             
             OperationQueue().addOperation {
                 let callApi = urlSession.dataTask(with: request) { (data, response, error) -> Void in
-                    
+
+                    // lots of guard and parsing are because the reponse json format is not in standard structure so I had to work manual parsing converting to string and removing some dirty parts to make it proper json
                     guard error == nil && data != nil else{
                         OperationQueue.main.addOperation {
                             completion(true, (url: "", lyrics: "Not found"))
