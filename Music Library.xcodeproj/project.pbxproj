@@ -16,6 +16,7 @@
 		568346061E04C87F000D2DCD /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568346021E04C87F000D2DCD /* MusicItem.swift */; };
 		568346071E04C87F000D2DCD /* MusicItemsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568346031E04C87F000D2DCD /* MusicItemsHandler.swift */; };
 		56DD254F1E0504C5003BDA0B /* MusicItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD254E1E0504C5003BDA0B /* MusicItemDetailViewController.swift */; };
+		56FAAF061E05A4380091E1D5 /* UtilitiesFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAAF051E05A4380091E1D5 /* UtilitiesFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		568346021E04C87F000D2DCD /* MusicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicItem.swift; sourceTree = "<group>"; };
 		568346031E04C87F000D2DCD /* MusicItemsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicItemsHandler.swift; sourceTree = "<group>"; };
 		56DD254E1E0504C5003BDA0B /* MusicItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicItemDetailViewController.swift; sourceTree = "<group>"; };
+		56FAAF051E05A4380091E1D5 /* UtilitiesFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilitiesFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				568346031E04C87F000D2DCD /* MusicItemsHandler.swift */,
+				56FAAF051E05A4380091E1D5 /* UtilitiesFunctions.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				568346051E04C87F000D2DCD /* MusicListTableViewCell.swift in Sources */,
 				568345FF1E04C4D7000D2DCD /* MusicListViewController.swift in Sources */,
 				568345EA1E04C47A000D2DCD /* AppDelegate.swift in Sources */,
+				56FAAF061E05A4380091E1D5 /* UtilitiesFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

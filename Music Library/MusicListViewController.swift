@@ -140,26 +140,24 @@ class MusicListViewController: UIViewController, UITableViewDelegate, UITableVie
                     cell.viewCellContainer.alpha = 1;
                 });
             }
-            
-            
+
             cell.selectionStyle = UITableViewCellSelectionStyle.none;
         }
         return cell;
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
-//        let nextViewCon = storyBoard.instantiateViewController(withIdentifier: "FullImageViewController") as! FullImageViewController;
+        self.isAnimateNow = false;
         
         if let cell = tableView.cellForRow(at: indexPath) as? MusicListTableViewCell {
-            
             cell.viewCellContainer.backgroundColor = UIColor.lightGray;
             
-//            nextViewCon.item = self.itemsHandler.filteredItems?[indexPath.row];
-//            nextViewCon.item.itmImage = cell.imgView.image;
-//            
-//            self.navigationController?.pushViewController(nextViewCon, animated: true);
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            
+            let nextViewCon = storyBoard.instantiateViewController(withIdentifier: "MusicItemDetailViewController") as! MusicItemDetailViewController;
+            nextViewCon.musicItem = self.itemsHandler.musicList?[indexPath.row];
+            self.navigationController?.pushViewController(nextViewCon, animated: true);
         }
     }
     

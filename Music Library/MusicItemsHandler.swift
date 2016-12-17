@@ -12,24 +12,14 @@ class MusicItemsHandler {
     
     var musicList:[MusicItem]?;
     
-    let BASE_URL = "https://itunes.apple.com/search?term=";
+    let ITUNES_BASE_URL = "https://itunes.apple.com/search?term=";
     
     init() {
         self.musicList = [];
     }
     
-    func removeWhiteSpaceAndUserPlus(input:String) -> String {
-        let arr = input.components(separatedBy: " ")
-        var tempText = "";
-        
-        for tmp in arr {
-            tempText = tempText + "+" + tmp.trimmingCharacters(in: .whitespaces);
-        }
-        return tempText;
-    }
-    
     func SearchMusic(searchText:String,completion: @escaping (_ finished:Bool) -> Void) {
-        let url = self.BASE_URL + self.removeWhiteSpaceAndUserPlus(input: searchText);
+        let url = self.ITUNES_BASE_URL + UtilitiesFunctions.removeWhiteSpaceByPlus(input: searchText);
         let request = URLRequest(url: URL(string: url)!);
         
         let configuration = URLSessionConfiguration.default;
@@ -53,8 +43,12 @@ class MusicItemsHandler {
                             musicItem.artistName = item["artistName"] as? String;
                             musicItem.collectionName = item["collectionName"] as? String;
                             let imgAlbum = item["artworkUrl100"] as? String;
-                            
                             musicItem.artworkUrl100 = URL(string: imgAlbum!);
+                            
+                            let trackViewUrl = item["trackViewUrl"] as? String;
+                            musicItem.trackViewUrl = URL(string: trackViewUrl!);
+                            
+                            musicItem.trackPrice = item["trackPrice"] as? String;
                             
                             self.musicList?.append(musicItem);
                         }
